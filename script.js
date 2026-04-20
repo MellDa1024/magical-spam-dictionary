@@ -55,7 +55,7 @@ $(document).ready(() => {
         data.forEach((copypasta, index) => {
             const block = $(`
                 <div class="copypasta-block">
-                    <div class="data" id="data-${index}">${formatText(copypasta.data)}</div>
+                    <div class="data" id="data-${index}">${copypasta.data}</div>
                     <div class="keywords">${copypasta.keywords.join(", ")}</div>
                     <button class="copy-button" data-target="data-${index}">복사</button>
                 </div>
@@ -76,10 +76,6 @@ $(document).ready(() => {
                 button.text("복사");
             }, 1000); // 1초 후에 복원
         });
-    }
-
-    function formatText(text, maxLength = 50) {
-        return text
     }
 
     function copyToClipboard(text) {
