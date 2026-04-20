@@ -79,22 +79,7 @@ $(document).ready(() => {
     }
 
     function formatText(text, maxLength = 50) {
-        const lines = [];
-        let currentLine = "";
-
-        text.split(" ").forEach(word => {
-            if (currentLine.length + word.length + 1 <= maxLength) {
-                currentLine += (currentLine.length > 0 ? " " : "") + word;
-            } else {
-                lines.push(currentLine);
-                currentLine = word;
-            }
-        });
-        if (currentLine.length > 0) {
-            lines.push(currentLine);
-        }
-
-        return lines.join("\n");
+        return text
     }
 
     function copyToClipboard(text) {
